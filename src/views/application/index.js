@@ -24,6 +24,13 @@ export default function Application() {
     }
   };
 
+  const deleteItem = (id) => {
+    console.log(id);
+    // let listWithoutItem = toDoList.filter(function (value, index, arr) {
+    //   // return ele != value;
+    // });
+  };
+
   return (
     <div className="container mt-3">
       <div className="input-wrapper">
@@ -34,7 +41,7 @@ export default function Application() {
         </span>
       </div>
       <div className="list-wrapper">
-        <Itemgroup toDoList={toDoList} />
+        <Itemgroup deleteItem={deleteItem} toDoList={toDoList} />
       </div>
     </div>
   );
