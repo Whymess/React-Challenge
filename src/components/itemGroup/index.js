@@ -1,0 +1,16 @@
+import React from "react";
+import { Item } from "../../components/";
+export default function Itemgroup(props) {
+  let { toDoList } = props;
+  const renderList = () => {
+    return (
+      [] &&
+      toDoList.map((el, i) => {
+        let { task, id } = el;
+        return <Item name={task} key={id} />;
+      })
+    );
+  };
+
+  return <ul className="list-group"> {renderList()}</ul>;
+}
