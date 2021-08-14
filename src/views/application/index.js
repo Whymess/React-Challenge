@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { Input, Itemgroup } from "../../components";
+import { sortAssending, sortDesending } from "../../ulti";
 
 export default function Application() {
   const [toDoList, setToDoList] = useState([]);
@@ -21,30 +22,6 @@ export default function Application() {
       let assendingList = [...toDoList].sort(sortDesending);
       setToDoList(assendingList);
     }
-  };
-
-  const sortAssending = (a, b) => {
-    var nameA = a.task.toUpperCase();
-    var nameB = b.task.toUpperCase();
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    return 0;
-  };
-
-  const sortDesending = (a, b) => {
-    var nameA = a.task.toUpperCase();
-    var nameB = b.task.toUpperCase();
-    if (nameA > nameB) {
-      return -1;
-    }
-    if (nameA < nameB) {
-      return 1;
-    }
-    return 0;
   };
 
   return (
