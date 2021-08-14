@@ -25,10 +25,10 @@ export default function Application() {
   };
 
   const deleteItem = (id) => {
-    console.log(id);
-    // let listWithoutItem = toDoList.filter(function (value, index, arr) {
-    //   // return ele != value;
-    // });
+    let filteredList = toDoList.filter((value) => {
+      return id != value.id;
+    });
+    setToDoList(filteredList);
   };
 
   return (
