@@ -1,0 +1,15 @@
+.container {
+  background-color: whitesmoke;
+  height: 500px;
+  width: 500px;
+
+  .input-wrapper {
+    height: 25%;
+    display: flex;
+    align-items: center;
+
+    &--direction {
+      width: 50px;
+    }
+  }
+}
