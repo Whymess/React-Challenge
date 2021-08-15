@@ -9,7 +9,10 @@
     align-items: center;
 
     &--direction {
-      width: 50px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 16em;
     }
   }
 

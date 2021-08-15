@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+// Components
 import "./index.scss";
 import { Input, Itemgroup } from "../../components";
 import { sortAssending, sortDesending } from "../../ulti";
@@ -9,7 +11,6 @@ export default function Application() {
   const addTask = (userInput) => {
     let copy = [...toDoList];
     copy = [...copy, { id: toDoList.length + 1, task: userInput }];
-
     setToDoList(copy);
   };
 
@@ -24,9 +25,13 @@ export default function Application() {
     }
   };
 
+  const clearList = () => {
+    setToDoList([]);
+  };
+
   const deleteItem = (id) => {
     let filteredList = toDoList.filter((value) => {
-      return id != value.id;
+      return id !== value.id;
     });
     setToDoList(filteredList);
   };
@@ -38,6 +43,9 @@ export default function Application() {
         <span className="input-wrapper--direction">
           <span onClick={() => sort("desc")}> ⬇️ </span>
           <span onClick={() => sort("asc")}> ⬆️</span>
+          <button type="button" onClick={clearList} className="btn btn-danger">
+            Clear
+          </button>
         </span>
       </div>
       <div className="list-wrapper">

@@ -1,5 +1,8 @@
 import React from "react";
+
+// components
 import { Item } from "../../components/";
+
 export default function Itemgroup(props) {
   let { toDoList, deleteItem } = props;
   const renderList = () => {
